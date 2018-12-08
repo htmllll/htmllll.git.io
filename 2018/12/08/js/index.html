@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>js | 火影</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="js概述（1）发展历史1995 ，js最早出现在netscaoe浏览器中       2009年，js遵循Commonjs规范，开始向服务器端发展 （2特点   弱类型语言  解释性语言，编译一行，执行一行  跨平台  基于对象（3）js应用领域       网页中的交互效果       移动APP开发       web服务器 js搭建开发环境   一种是浏览器中，内置的js解释器  一种是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/js/index.html">
+<meta property="og:site_name" content="火影">
+<meta property="og:description" content="js概述（1）发展历史1995 ，js最早出现在netscaoe浏览器中       2009年，js遵循Commonjs规范，开始向服务器端发展 （2特点   弱类型语言  解释性语言，编译一行，执行一行  跨平台  基于对象（3）js应用领域       网页中的交互效果       移动APP开发       web服务器 js搭建开发环境   一种是浏览器中，内置的js解释器  一种是">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-08T08:47:48.385Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js">
+<meta name="twitter:description" content="js概述（1）发展历史1995 ，js最早出现在netscaoe浏览器中       2009年，js遵循Commonjs规范，开始向服务器端发展 （2特点   弱类型语言  解释性语言，编译一行，执行一行  跨平台  基于对象（3）js应用领域       网页中的交互效果       移动APP开发       web服务器 js搭建开发环境   一种是浏览器中，内置的js解释器  一种是">
+  
+    <link rel="alternate" href="/atom.xml" title="火影" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/fashion.css">
+  <link rel="stylesheet" href="/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="火影" rel="home"> 火影 </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">一个有内涵的博客</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-js" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      js
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/12/08/js/" class="article-date">
+	  <time datetime="2018-12-08T08:47:33.000Z" itemprop="datePublished">December 8, 2018</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  js概述<br>（1）发展历史1995 ，js最早出现在netscaoe浏览器中<br>       2009年，js遵循Commonjs规范，开始向服务器端发展<br> （2特点<br>   弱类型语言<br>  解释性语言，编译一行，执行一行<br>  跨平台<br>  基于对象<br>（3）js应用领域<br>       网页中的交互效果<br>       移动APP开发<br>       web服务器<br> js搭建开发环境<br>   一种是浏览器中，内置的js解释器<br>  一种是服务器中，需要安装NODEJS <a href="https://nodejs" target="_blank" rel="noopener">https://nodejs</a> NODEJS官方<br>  运行方式<br>   （1）NODEJS下<br>创建js文件<br>  node c:xampp/…./02.js<br>(2)浏览器下<br>   创建js文件<br>创建html文件<br>   <script src="02.js"></script><br>  双击打开html<br>   （4）js语法规范<br>区分大小写  不能用大写，分号可以不加，最好加<br>（3）  注释：分为单行注释（//…）和多行注释（/<em>…</em>/）  不用的就就可以用<br> （5）变量：就是用于存储数据的容器<br>x=1  y=2  x y相当于容器<br>  （1）声明变量<br>使用关键字 var<br>var x=1；<br>练习：声明多个变量，分别存储员工的编码，姓名，生日，工资，部门编码。<br>（2）变量的命名规则<br>可以使用字母，美元符号，下划线，数字，不能以数字开头。<br>不能使用关键字和保留字作为变量<br>userName   isOnsale  驼峰命名法<br>user_name is_onsale 下划线命名<br>（3）一次声明多个变量<br>var chinese=90,math=95;<br>多个变量之间用逗号隔开。<br>（4）声明变量未赋值<br>var a；<br>a的值为undefined（未定义）<br>（5）常量<br>一旦申明就不能再重新赋值。<br>l列如：圆周率，春节，中秋节。。。。<br>const pi =3.14;<br>练习：使用变量存储半径，使用常量存储圆周率，计算园的面积和周长。<br>var r=4;<br>const pi=3.14;<br>console.log(pi<em>r</em>r);<br>console.log(2<em>pi</em>r);<br>练习  ：<br>使用变量保存园的半径为5，常量保存园为3.14，分别计算30度/60度的周长。<br>  使用变量保存商品1的单价12.5和数量7，商品2的单价18，数量3.5，计算商品的总价。<br>（3）预算<br>1.数据类型<br>分为原始类型和应用类型<br>原始类型就是数字型字符串型，布尔型，未定义性（unaefined），null<br>（1）数值型  e9就是10的9尺方<br>分为整型和浮点型<br>整型在内存占4个字节，浮点型占8个字节<br>整型8进制（0开头），10进制，16进制（0x开头）<br>浮点型分为指数型和普通<br>  2.147e9<br>（2）字符串类型<br>数据被英豪所包含就是字符串类型，不区分单双引号。<br>查看摸一个字符的Unicode编码<br>‘t’.charCodeAt()<br>（3）布尔型<br>在程序中表示真或者假<br>true/false<br>常用于一些是否的结果<br> isVip ixOnsale,isLogin<br>  (4）未定义性                                                     没懂<br>申明了一个变量，为赋值结果是undefined<br>（5）空（null）                                           ！<br>用于引用数据类型<br>检测数据类型<br>typeof（）<br>number/string/boolean/undefined/object<br>2.数据类型转换<br>（1）隐试转换<br>数字+字符串：数字转换成字符串<br>  1+’a’//‘1a’结果变成拼接形式了<br>数字+布尔型:布尔型转化数字 true-&gt;1 false-&gt;0<br>  1+true  //2<br>  1+falee  //1<br>字符串+布尔型：布尔型转换成字符串<br>‘a’+true  //‘atrue’<br>null的加法<br>1+null //1 null-&gt;0<br>true+null//1   tre-&gt;1  null-&gt;0<br>‘a’+null //‘anull’   null-&gt;’null’<br>练习：<em>9<br>var num1=3,num2=true,num3=’hello’;<br>console.log(num1+num2+num3);’4hello’<br>console.log(num2+num3+num1);’truhello3’<br>console.log(num3+num1+num2);’hello3true’<br>-</em>/执行运算<br>尝试将符号两端的数据转换成数据型，（自动调用Nunber转换）如果无法转换，返回NaN（Not a Number）<br>总结：加号的作用<br>执行加法运算；执行字符串的拼接。<br>（2）强制转换<br>  将数据转换成数值型<br>Number（）<br>将任意的数据转换成数值型，如果被转换的字符串中含有非数字，则返回NaN；布尔型会转成数值型。<br>  将数据转换成整型<br>           parselnt()<br>     parselnt(‘1.5’)//1<br>查看数据的开始是否为数字，遇到非数字则返回前边的数据。<br>如果开头是非数字，则返回NaN<br>将数据转成浮点型<br>parseFloat（）<br>练习：’1.5a’  ‘7.1a’ ‘a2.3’<br>将数据转成为字符串<br>toSteing()<br>var pi=3.14;<br>pi.toString()<br>3.运算符合表达式<br>由运算符连接的操作数据，所组成的形式为表达式<br>（1）算术运算符</p>
+<ul>
+<li><ul>
+<li><ul>
+<li>/ % ++ –<br>%取余<br>++自增，在原来的基础之上加1<br>–自减，在原来的基础之上减1<br>console.log(a++)先打印a的值，然后在自增<br>console.log(++a)先自增，然后在打印a的值<br>练习：<br>var=3;<br>console.log(a++ + ++a);<br>a++先获取a的值（3）；执行自增；<br>++a先让a执行自增（5）；然后在获取a<br>（ 2）比较运算符<blockquote>
+<p>= &lt;= &gt; &lt;  ==()等于  ！=    ===（全等于）  ！==<br>返回的结果是布尔型的值<br>==只是比较两个数据的值是否相同<br>===不仅比较数据的值 ，还比较两个数据的类型是否相同<br>3&gt;’10’//true<br>数字和字符比较，字符串转成数值型<br>两个字符串比较，比较的是Unicode码<br>3-&gt;51  1-&gt;49<br>3&gt;’10a’//false<br>3&lt;’10a’//false<br>3===’10a’//false<br>NaNh 和任何的数字比较（&gt; &lt;  &gt;=   &lt;=  ==  ===）返回false；<br>NaN ==NaN  返回false<br>（3）逻辑运算符<br>||  或者  &amp;&amp; 并且  非 ！<br>||  关联的两个条件值需要满足其一，结果就是true;否则false<br>&amp;&amp;  关联的两个条件都满足，结果是true，  否则是false<br>！取向反<br>逻辑短路                     不懂<br>||当地一个条件为true的时候，就不需要执行第二个条件<br>&amp;&amp;当第一个条件为false的时候，就不需要执行第二个条件<br>练习：下边的代码是否会报错<br>var a=3;<br>a&gt;5 &amp;&amp; console.log(ename);<br>a&lt;1 || console.log(ename);<br>(4)位运算符<br>将数据转成二进制然后执行运算<br>1  10  11  100  101  110  111 1000  1001  。。。10000<br>2           4                           8                             16<br>101101=100000+1000+100+1</p>
+<pre><code>32    +8      +   4   +1
+</code></pre><p>56=32+16+8<br>100000+10000+1000  =111000<br>按位与（&amp;） 上下两位都是1，结果是1，否则是0<br>按位或（|）上下两位有1，结果是1，否则是0<br>安位异或（^）上下两位相同是零，不同是1<br>安位右移（&gt;&gt;）删除二进制的最后n位，大概变小到原来一般<br>安位左移（&lt;&lt;）在二进制的最后添加0，变大到原来一倍<br>011<br>101<br>练习：5&amp;9   8|10   6 ^12<br>0101   0110       0110<br>1001   1100       1100<br>（5）赋值运算符<br>=  +=  -=  *=  /=  %=<br>在原来的基础之上进行加减乘除取余<br>x+=3   x%=3  ——》x=x%3<br>(1)复习今天内容  ，<br>练习：<br>声明一个变量保存年份，如果是闰年，打印 是闰年（逻辑短路）<br>闰年标准：4年一个闰年（能被4整除），并且不能100整除；或者能被400整除<br>（3）预习逻辑结构（if if-else if-else嵌套）</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/08/123/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">123</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav">无</ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 火影 All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

@@ -104,6 +104,103 @@
         
           <section id="main">
   
+    <article id="post-js" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/12/08/js/">js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/12/08/js/" class="article-date">
+	  <time datetime="2018-12-08T08:47:33.000Z" itemprop="datePublished">December 8, 2018</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  js概述<br>（1）发展历史1995 ，js最早出现在netscaoe浏览器中<br>       2009年，js遵循Commonjs规范，开始向服务器端发展<br> （2特点<br>   弱类型语言<br>  解释性语言，编译一行，执行一行<br>  跨平台<br>  基于对象<br>（3）js应用领域<br>       网页中的交互效果<br>       移动APP开发<br>       web服务器<br> js搭建开发环境<br>   一种是浏览器中，内置的js解释器<br>  一种是服务器中，需要安装NODEJS <a href="https://nodejs" target="_blank" rel="noopener">https://nodejs</a> NODEJS官方<br>  运行方式<br>   （1）NODEJS下<br>创建js文件<br>  node c:xampp/…./02.js<br>(2)浏览器下<br>   创建js文件<br>创建html文件<br>   <script src="02.js"></script><br>  双击打开html<br>   （4）js语法规范<br>区分大小写  不能用大写，分号可以不加，最好加<br>（3）  注释：分为单行注释（//…）和多行注释（/<em>…</em>/）  不用的就就可以用<br> （5）变量：就是用于存储数据的容器<br>x=1  y=2  x y相当于容器<br>  （1）声明变量<br>使用关键字 var<br>var x=1；<br>练习：声明多个变量，分别存储员工的编码，姓名，生日，工资，部门编码。<br>（2）变量的命名规则<br>可以使用字母，美元符号，下划线，数字，不能以数字开头。<br>不能使用关键字和保留字作为变量<br>userName   isOnsale  驼峰命名法<br>user_name is_onsale 下划线命名<br>（3）一次声明多个变量<br>var chinese=90,math=95;<br>多个变量之间用逗号隔开。<br>（4）声明变量未赋值<br>var a；<br>a的值为undefined（未定义）<br>（5）常量<br>一旦申明就不能再重新赋值。<br>l列如：圆周率，春节，中秋节。。。。<br>const pi =3.14;<br>练习：使用变量存储半径，使用常量存储圆周率，计算园的面积和周长。<br>var r=4;<br>const pi=3.14;<br>console.log(pi<em>r</em>r);<br>console.log(2<em>pi</em>r);<br>练习  ：<br>使用变量保存园的半径为5，常量保存园为3.14，分别计算30度/60度的周长。<br>  使用变量保存商品1的单价12.5和数量7，商品2的单价18，数量3.5，计算商品的总价。<br>（3）预算<br>1.数据类型<br>分为原始类型和应用类型<br>原始类型就是数字型字符串型，布尔型，未定义性（unaefined），null<br>（1）数值型  e9就是10的9尺方<br>分为整型和浮点型<br>整型在内存占4个字节，浮点型占8个字节<br>整型8进制（0开头），10进制，16进制（0x开头）<br>浮点型分为指数型和普通<br>  2.147e9<br>（2）字符串类型<br>数据被英豪所包含就是字符串类型，不区分单双引号。<br>查看摸一个字符的Unicode编码<br>‘t’.charCodeAt()<br>（3）布尔型<br>在程序中表示真或者假<br>true/false<br>常用于一些是否的结果<br> isVip ixOnsale,isLogin<br>  (4）未定义性                                                     没懂<br>申明了一个变量，为赋值结果是undefined<br>（5）空（null）                                           ！<br>用于引用数据类型<br>检测数据类型<br>typeof（）<br>number/string/boolean/undefined/object<br>2.数据类型转换<br>（1）隐试转换<br>数字+字符串：数字转换成字符串<br>  1+’a’//‘1a’结果变成拼接形式了<br>数字+布尔型:布尔型转化数字 true-&gt;1 false-&gt;0<br>  1+true  //2<br>  1+falee  //1<br>字符串+布尔型：布尔型转换成字符串<br>‘a’+true  //‘atrue’<br>null的加法<br>1+null //1 null-&gt;0<br>true+null//1   tre-&gt;1  null-&gt;0<br>‘a’+null //‘anull’   null-&gt;’null’<br>练习：<em>9<br>var num1=3,num2=true,num3=’hello’;<br>console.log(num1+num2+num3);’4hello’<br>console.log(num2+num3+num1);’truhello3’<br>console.log(num3+num1+num2);’hello3true’<br>-</em>/执行运算<br>尝试将符号两端的数据转换成数据型，（自动调用Nunber转换）如果无法转换，返回NaN（Not a Number）<br>总结：加号的作用<br>执行加法运算；执行字符串的拼接。<br>（2）强制转换<br>  将数据转换成数值型<br>Number（）<br>将任意的数据转换成数值型，如果被转换的字符串中含有非数字，则返回NaN；布尔型会转成数值型。<br>  将数据转换成整型<br>           parselnt()<br>     parselnt(‘1.5’)//1<br>查看数据的开始是否为数字，遇到非数字则返回前边的数据。<br>如果开头是非数字，则返回NaN<br>将数据转成浮点型<br>parseFloat（）<br>练习：’1.5a’  ‘7.1a’ ‘a2.3’<br>将数据转成为字符串<br>toSteing()<br>var pi=3.14;<br>pi.toString()<br>3.运算符合表达式<br>由运算符连接的操作数据，所组成的形式为表达式<br>（1）算术运算符</p>
+<ul>
+<li><ul>
+<li><ul>
+<li>/ % ++ –<br>%取余<br>++自增，在原来的基础之上加1<br>–自减，在原来的基础之上减1<br>console.log(a++)先打印a的值，然后在自增<br>console.log(++a)先自增，然后在打印a的值<br>练习：<br>var=3;<br>console.log(a++ + ++a);<br>a++先获取a的值（3）；执行自增；<br>++a先让a执行自增（5）；然后在获取a<br>（ 2）比较运算符<blockquote>
+<p>= &lt;= &gt; &lt;  ==()等于  ！=    ===（全等于）  ！==<br>返回的结果是布尔型的值<br>==只是比较两个数据的值是否相同<br>===不仅比较数据的值 ，还比较两个数据的类型是否相同<br>3&gt;’10’//true<br>数字和字符比较，字符串转成数值型<br>两个字符串比较，比较的是Unicode码<br>3-&gt;51  1-&gt;49<br>3&gt;’10a’//false<br>3&lt;’10a’//false<br>3===’10a’//false<br>NaNh 和任何的数字比较（&gt; &lt;  &gt;=   &lt;=  ==  ===）返回false；<br>NaN ==NaN  返回false<br>（3）逻辑运算符<br>||  或者  &amp;&amp; 并且  非 ！<br>||  关联的两个条件值需要满足其一，结果就是true;否则false<br>&amp;&amp;  关联的两个条件都满足，结果是true，  否则是false<br>！取向反<br>逻辑短路                     不懂<br>||当地一个条件为true的时候，就不需要执行第二个条件<br>&amp;&amp;当第一个条件为false的时候，就不需要执行第二个条件<br>练习：下边的代码是否会报错<br>var a=3;<br>a&gt;5 &amp;&amp; console.log(ename);<br>a&lt;1 || console.log(ename);<br>(4)位运算符<br>将数据转成二进制然后执行运算<br>1  10  11  100  101  110  111 1000  1001  。。。10000<br>2           4                           8                             16<br>101101=100000+1000+100+1</p>
+<pre><code>32    +8      +   4   +1
+</code></pre><p>56=32+16+8<br>100000+10000+1000  =111000<br>按位与（&amp;） 上下两位都是1，结果是1，否则是0<br>按位或（|）上下两位有1，结果是1，否则是0<br>安位异或（^）上下两位相同是零，不同是1<br>安位右移（&gt;&gt;）删除二进制的最后n位，大概变小到原来一般<br>安位左移（&lt;&lt;）在二进制的最后添加0，变大到原来一倍<br>011<br>101<br>练习：5&amp;9   8|10   6 ^12<br>0101   0110       0110<br>1001   1100       1100<br>（5）赋值运算符<br>=  +=  -=  *=  /=  %=<br>在原来的基础之上进行加减乘除取余<br>x+=3   x%=3  ——》x=x%3<br>(1)复习今天内容  ，<br>练习：<br>声明一个变量保存年份，如果是闰年，打印 是闰年（逻辑短路）<br>闰年标准：4年一个闰年（能被4整除），并且不能100整除；或者能被400整除<br>（3）预习逻辑结构（if if-else if-else嵌套）</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-123" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/12/08/123/">123</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/12/08/123/" class="article-date">
+	  <time datetime="2018-12-08T08:43:00.000Z" itemprop="datePublished">December 8, 2018</time>
+	</a>
+
+       
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-mysql-note" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -179,6 +276,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在哪里跌倒就在哪里躺着</p>
+<p>hexo new xxxx  // 新建文章<br>hexo clean   // 清理缓存<br>hexo g   // 编译<br>hexo d   // 上传</p>
 
       
     </div>
@@ -350,6 +448,30 @@
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/12/08/js/">js</a></h6>
+              <span>December 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/12/08/123/">123</a></h6>
+              <span>December 8, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/12/08/mysql-note/">mysql-note</a></h6>
               <span>December 8, 2018</span>
             </div>
@@ -398,7 +520,7 @@
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
