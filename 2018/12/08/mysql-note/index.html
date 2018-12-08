@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>mysql-note | 火影</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="软件的生命周期：                           可行性研究阶段                   概要设计阶段             编码实现阶段        软件测试阶段     软件维护阶段   项目部署阶段项目维护阶段 服务器学习目标  如何在项目中保存数据 —数据库–单词1.数据库概要    英文名：（database）以特定的结构批量存储业务数据的软件。  分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql-note">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/mysql-note/index.html">
+<meta property="og:site_name" content="火影">
+<meta property="og:description" content="软件的生命周期：                           可行性研究阶段                   概要设计阶段             编码实现阶段        软件测试阶段     软件维护阶段   项目部署阶段项目维护阶段 服务器学习目标  如何在项目中保存数据 —数据库–单词1.数据库概要    英文名：（database）以特定的结构批量存储业务数据的软件。  分">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-08T07:49:00.596Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql-note">
+<meta name="twitter:description" content="软件的生命周期：                           可行性研究阶段                   概要设计阶段             编码实现阶段        软件测试阶段     软件维护阶段   项目部署阶段项目维护阶段 服务器学习目标  如何在项目中保存数据 —数据库–单词1.数据库概要    英文名：（database）以特定的结构批量存储业务数据的软件。  分">
+  
+    <link rel="alternate" href="/atom.xml" title="火影" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/fashion.css">
+  <link rel="stylesheet" href="/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="火影" rel="home"> 火影 </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">一个有内涵的博客</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-mysql-note" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      mysql-note
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/12/08/mysql-note/" class="article-date">
+	  <time datetime="2018-12-08T07:48:27.000Z" itemprop="datePublished">December 8, 2018</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>软件的生命周期：<br>                           可行性研究阶段<br>                   概要设计阶段<br>             编码实现阶段<br>        软件测试阶段<br>     软件维护阶段<br>   项目部署阶段<br>项目维护阶段</p>
+<p>服务器<br>学习目标<br>  如何在项目中保存数据 —数据库–单词<br>1.数据库概要<br>    英文名：（database）以特定的结构批量存储业务数据的软件。<br>  分为：网状数据库 层次数据库   关系型数据库（RDBMS）（重点）逻辑结构Server服务器-&gt;Database数据库  –&gt;Table表格–&gt;Row行–&gt;&gt;Column列<br>常见的关系数据库：sQLite微型数据库，常用语移动设备    MySQL开源中小型数据库，可用于各种操作系统   PostgreSQL开源中小型数据库  SQL Server  Microsoft开发的中性数据库，只用于windows系统<br>Oracle  Oracle公司开发的中大型数据库，可用于各种操作<br>2.MySQL数据库<br>   Oracle分支：MySQL<br>   Martin分支：MariaDB<br>   xampp是个服务器的套装，包含多种开源的服务器，列如MySQL,PHP<br>MySQL  部署结构<br>  服务器端软件：负者存储、维护数据—-银行总行机房<br>客户端软件：负责向服务器发起增删改查的命令===ATM机<br>（1服务器端）：<br>  c：xampp/mysql/bin/mysqlb.exe启动文件<br>c：/xampp/mysql|/data  数据文件–人看不懂<br>（2）客户端;’<br>c:/xampp/mysql|/bin/mysql.exe 客户端软件<br>用来连接服务器端<br>（3）连接MySQL服务器<br>mysql.exe -h127.0.0.1 -P大写3306 -uroot -p  简写mysql -uroot<br>3.常用MySQL管理命令<br>quit；  退出服务器的连接<br>show databases；  显示服务器上当前所有的数据库<br>use     数据库名； 进人指定的数据库<br>show tables; 显示当前数据库中所有的数据表<br>desc    表名称；  描述表中有那些列<br> 练习：查询information_schema和mysql数据库中分别有多少个数据库<br>练习：查询出phpmyadmin中一下有那些列<br>4.MySQL常用的SQL命令<br>SQL:Structured Query Language,结构化查询语言，用于对关系型数据库服务器中的数据进行增改查的操作。<br>SQL语言最早是由IBM提出，后提交给了ISO，最终成为了数据库行业的标准语言，分为SQL-87;SQL-92;SQL-99等。<br>当前标准的SQL命令可以被大多数的关系数据库所支持。<br>SQL 命令的两种执行方式<br>（1）交互模式：客户端输入一行，点击回车，服务器执行一行。使用于临时性的查看数据。<br>mysql -uroot 回车<br>（2）脚本模式：客户端把要执行的命令写在一个文本文件中，一次性的提交给服务器执行。适用于批量的增删改查。<br>mysql -uroot &lt; c:/xampp/::/01.sql  回车<br>SQL语法规范<br>（1）每条SQL语句必须以英文的分号结尾，一条语句可以跨越多行，见到分号认为语句结束。<br>（2）若第n行语句有错误，则此语句以及后续的语句都不能在执行。<br>（3）SQL命令不区分大小写，习惯上数据库关键字用大写，非关键字用小写。<br>（4）SQL命令还可以使用单行注释：#  ，和多行注释：/<em>;;</em>/,注释的代码不会被服务器执行。<br>日常开发中常用的SQL命令<br>（1）set names UTf8;    防止中文乱码的作用<br>（2）丢弃指定的数据库，如果存在的话<br> DROP DATABASE IF EXISTS 数据库名称;<br>列约束<br>MysQL 可以对插入的时刻进行特定的验证，只有满足条件才允许插入到数据表中，否则白认为是非法的插入。<br>列入：一个人的性别只能是男或者女，一个人的年龄0~100之间。<br>(3)创建新的数据库CREATE DATABASE 数据库名字;<br>（4）进人刚刚创建的数据库<br>USE 数据库名字；<br>（5）创建保存数据的表<br>CREATE TABLE   表名(<br>    sid INT,<br>   name VARCHAR(8),<br>  sex varchar(1),<br>  score INT<br>)；<br>(6) 向数据表中插入数据<br>INSERT INTO 表名 VALUES(‘1’,’tom’,’M’,’80’);<br>(7)查询被中所有数据<br>SELECT  * FROM  表名;<br>(7)修改数据<br>UPDATE student SET score=’66’,sex=’F’ WHERE sid=’2’;<br>(8)删除数据<br>DELETE FROM  输表名 WHERE sid=’3’;<br> VARCHAR 可变的字符</p>
+<p>课后任务<br>1；复习今天的内容<br>2；练习<br>创建脚本文件xz.sql, 创建数据库xz, 进人该数据库；<br>创建数据表 user， 包含 uid，用户名 uname，密码 upwd，邮箱地址email，电话号 phone;性别 sex,userName(真实姓名)，registerTime(注册时间) isOnline是否在线<br>插入5条数据，删除2条数据，修改2条数据 最后查询结果，<br>注册时间 ‘2018-12-10’<br>SQL 命令<br>标准了命令<br>DDL:Data Define langage 定义数据结构<br>   CREATE/DROP/ALTER<br>DML:Data Munipulate Language 操作数据<br>INSERT/DELETE/UPDATE<br>DQL:Data     Query language查询数据<br>SELECT<br>DCL:Data Control Language 控制用户权限<br>GRANT(授权)/REVOKE(收权)<br>1.计算机存储字符<br>（1）若何存储英文字符<br>ASCII:共有128个，对所有的英语字符及标点符进行了编码。HeIIo -》72102108108111<br>Latin-1：共有256个，兼容ASCII，同时对欧洲符号进行了编码。MySQL默认就使用这种编码。<br>（2）如何存储中文字符<br>GB2312 岁常用的6千多汉字进行了编码，兼容ASCII编码<br>GBK:对两万多汉字进行编码，兼容GB2312<br>BIG5：台湾繁体字编码，兼容ASCII<br>Unicode：对世间上主流的语言常用的字符进行了编码，兼容ASCLL,不兼容GBK,GB2312，BIG5等系列。<br>8：具体分为UTF-16，UTF-32等存储方案。<br>(3)解决MySQL存储中文乱码<br>sql脚本文件存储的编码utf8<br>客户端连接服务器端使用的编码为utf8<br>服务器端创建数据库存储使用的编码为utf8<br>练习：创建脚本文件01_dangdang.sql,<br>dangdang,设置编码为utf8，进人该数据库，<br>数据库的表book,包含bid,title, author(作者)，price(价格)，publish（出版社），pubTime(出版时间)<br>插入4条记录，修改第2条记录，删除第3条记录。</p>
+<p>2.MySQL中的列类型<br>创建数据表的时候，指定的列可以存储的数据类型。<br>CRATE TABLE book（bid 列类型）；<br>（1）数值类型  引号可以不加<br>TINYINT    微小的整型  占一个字节 范围-128~127<br>SMALLINT小整型，占2个字节 范围-32768~32767<br>INT          整型，占4个字节范围-2147483648~2147483647<br>BIGINT    大整型，占8个字节<br>FLOAT     单精度浮点型，占4个字节 范围<br> 3.， 范围比INT大得多，可能产生计算误差。<br>DOUBLE  双精度浮点型，占8个字节，范围比BIGNT打的多。<br>DECIMAL(M,D）定点小数，不会产生计算误差，M代表总的有效位数，D代表小数点后的有效位数<br>BOOL      布尔型，只有两个结果TRUE/1,FALSE/0，TRUE和FALSE不能加引号；真正存储数据的时候，会使用TINYINT.</p>
+<p>（2）日期时间类型(必须加引号)<br>DATE 日期型 ‘2018-12.12’<br>TIME 时间型 ‘14:22:30’<br>DATETIME 日期时间型  ‘2018_12_12  14:22:30’<br>(3)字符串类型（必须加引号）<br>VARCHAR(M)  变长字符串,不会产生空间浪费，操作速度相对较慢，M最大值是65535<br>CHAR(M)  定长字符串，可能产生空间浪费，操作速度较快，M最大值是255；用于存储手机号码，身份证等固定长度的字符。<br>TEXT</p>
+<p>（3）字符串类型  大型变长字符串，最多存2G</p>
+<p>TB  GB  MB KB  BT（字节） BIT<br>练习：创建脚本文件03_tedu.sql,创建数据库tedu,设置UTF8编码，进人该数据库。<br>创建保存部门数据的表dept,包含did，dname（部门名称），cmpCount（员工数量）<br>10 研发部 3<br>20 市场部 2<br>30 运营部 2<br>（3）列约束<br>MySQL可以对插入的数据进行特定的验证，只要满足条件才允许插入单数据表中，否则被认为是非法的插入。<br>列如：一个人的性别只能是女男 一个人的年龄0~100之间<br>（1）主键约束——PRIMARY KEY<br>声明了主键列上的值不能出现重复，表中查询的记录会按照主键由小到大排序——加快查找的速度；通常主键调价到编号列中<br>注意：一个表中只能有一个主键<br>（2）唯一约束——UNIQUE<br>声明了唯一约束的列上不能插入重复的值，允许插入NULL，<br>而且允许插入多个HULL<br>NULL表示空，在插入数据，暂时无法群定要保存数据。<br>如：无法确定员工的姓名，工资。<br>课后任务：<br>（1）复习今天的内容，重新编写代码<br>（2）练习创建脚本文件xz.sql,创建数据库xz， 设置编码UTF8，<br>进人数据库。<br>创建保存笔记本分类的表xz_laptop_family(fid, fname,laptopCount笔记本数量）<br>10  联想  2   20戴尔 2   30  小米  3<br>创建笔记本数据表 xz_laptop(lid,title,price,spec规格，detail详细介绍，shelfTime上架时间，isOnsale是否在售，familyld所属的分类编号)<br>脚架7条数据<br>                               12.5<br>1列约束<br>（1）主键约束——PRIMARY KEY<br>（2）唯一约束——UNIQUE<br>(3)非空约束——NOT NULL<br>申明了非空约束的列上不能插入NULL<br>(4)默认值约束——DEFAULT<br>可以使用DEFAULT 关键字声明默认值，有两种方法可以应用默认值<br>INSERT INTO xz_laptop_family VALUES(40，’苹果’，DEFAULT);<br>INSERT INTO xz_laptop_family(fid,fname)VALUES(50,’华硕’）；<br>（5）检查约束——CHECK<br>检查约束可以对插入的数据进行检验<br>CREATE TABLE student (<br>    age TINYINT CHCK (AGE&gt;=18AND AGE&lt;=60)<br>);<br>MySQL 不支持检查约束，会降低数据的插入速度。<br>（6）外键约束——FOREIGN KEY<br>声明了外键约束的列，取值必须在另一个表的主键列上出现过，列列类型要保持一致，取值可以是NULL<br>   FOREIGN KEY (familyid)<br>   REFERENCES  xz_laptop_family(fid)<br>2.MySQL 中的自增列<br>AUTO_INCREMENT:自动增长 ，加入一个列声明了自增列需手动赋值，直接设置为NULL，会获取当前的最大值，然后加1插入。<br>注意：<br>  自增列允许手动赋值<br>只是用于增数列的主键列上</p>
+<p>  练习：创建脚本文件02_tadu.sql,   创建数据库  tedu  ,设置编码。<br>创建门表dept (did, dname)<br>10  研发部  20  市场部  30  运营部  40测试部<br>创建员工表emp(eid ,ename,sex,birthday生日，salary工资，deptld所属部门编号）<br>插入15条记录，有一个人员工没有确定<br>3.简单查询<br>（1）查询特定的列<br>假列 ：查询所有员工的姓名，工资，生日<br>SELECT sname，salary,birthday FROM emp;<br>(2)查询所有的列<br>SELECT<em>FROM emp;<br>SELECT eid,ename,sex,birthday,salary,deptldFROM emp;<br>(3)给列起别名<br>如：查询向右员工的姓名 工资，使用汉字的别名显示<br>SELECT ename AS 姓名，salary AS 工资 FROM emp;<br>练习：查询所有员工的编号，姓名，性别，生日，用中文别名<br>SELECT eid AS 编号，ename AS 姓名，sex AS 性别，birthday AS 生日 FROM emp;<br>练习：查询所有的员工的编号，姓名，使用1个英文字母别名<br>SELECT eid a,ename b FROM emp;<br>注意：AS关键字是可以省略，保留空格。<br>（4）只显示不同的记录/合并相同的记录<br>列：查询出员工都在哪些部门<br>SELECT DISTINCT deptld FROM emp;<br>练习：查询出都有哪些性别的员工<br>SELECT<br>(5)在查询是执行计算<br>列：计算2</em>33/47-8+10<br>SELECT2<em>33/47-8+10;<br>练习：查询出所有的员工的姓名机器年薪<br>SELECT ename,salary</em>12 FROM emp;<br>练习：假设每个员工工资增加500元，年终奖500元，查询向右员工的姓名及其年薪，要给列起别名<br>SELECT ename 姓名,(salary+500<em>12+5000 AS 年薪 FROM emp;<br>(6)查询结果集的排序<br>列：查询所有的部门，结果按照部门编号升序排序<br>SELECT</em>FROM dept ORDER BY did ASC;#ascendant<br>列：查询所有部门，结果按照部门编号降序排序<br>SELECT<em>FROM dept ORDER BY did DESC;#descendant<br>练习：查询所有员工信息，结果按照工资由大到小排序<br>SELECT</em>FROMemp ORDER BY salary DESC;<br>l练习：查询所有员工，结果按照由大到小排序<br>SELECT<em>FROM emp ORDER BY birthday ASC;<br>练习：查询所有员工，结果按照由大到小排序<br>SELECT</em>FROM emp ORDER BY birthday DESC;<br>练习：查询所有员工，结果按照姓名的升序排序<br>SELECT<em>FROM emp ORDER BY ename;<br>练习：查询向右员工，结果按照工资降序排序，如果工资相同，按照姓名排序。<br>SELECT</em>FROM emp ORDER BY salary DESC,ename;<br>练习：查询所有员工，结果按照性别排序，如果性别相同，按照工资的升序排序。<br>SELECT<em>FROM emp ORDER BY sex,salary;<br>ORDER BY 可以按照 数值，日期/时间‘’字符串来排序<br>默认按照ASC升序排序<br>(7)条件查询<br>是咧：查询出编号5的员工所有信息<br>SELECT</em>FROM emp WHERE eid=5；<br>练习：查询出姓名为King的员工的编号，工资，生日。<br>SELECT eid,salary,birthday FROM emp WHERE ename=’king’;<br>练习：查询出20号部门下向右员工信息<br>SELECT <em> FROM emp WHERE deptld=20；<br>练习：查询出1991-1-1后出生的员工所有信息<br>SELECT </em> FROM EMP WHERE birthday&gt;’1991-1-1’;<br>练习：查询出不在10号部门的员工所有信息<br>SELECT <em> FROM emp WHERE deptid!=10;<br>练习：查询出没有明确部门的员工所有信息<br>SELECT </em> FROM emp WHERE deptId IS NULL;<br>练习：查询出有明确部门的员工所有信息<br>SELECT <em> FROM emp WHERE deptId IS NOT NULL;<br>练习：查询出工资大于6000的女员工所有信息<br>SELECT </em> FROM emp WHERE salary&gt;6000 AND sex=0;<br>练习：查询出工资在5000~7000之间的员工所有信息<br>SELECT <em> FROM emp WHERE salary&gt;=5000 AND salary&lt;=7000;<br>练习：查询出工资为5000以下，7000以下的员工所有信息。<br>SELECT </em> FROM emp WHWRE salary<5000 or="" salary="">7000;<br>SELECT <em> FROM emp WHREE salary NOT BETWEEN 5000 AND 7000;<br>练习：查询出1990之前和1993以后出生的员工所有信息<br>SELECT </em> FROM emp WHERE birthday&lt;’1990-1-1’OR birthday&gt;’1993-12-31’;<br>练习：查询出1993年出生的员工所有信息<br>SELECT <em> FROM emp WHERE birthday&gt;=’1993-1-1’AND birhday&lt;=’1993-12-31’;<br>练习：查询出10号部门和30号部门员工所有信息<br>SELECT </em> FROM emp WHERE deptId=10 OR deptld=30;<br>SELECT <em> FROM emp WHERE deptld IN (10,30);<br>练习：查询出不在10号和30号部门与员工所有信息<br>SELECT </em> FROM emp WHERE deptId NOT IN (10,30);<br>IS NULL /IS NOT NULL<br>注意：删除，更改，查询都可以结合条件查询。<br>（8）模糊条件查询<br>列子：查询出员工姓名含有字母e的员工所有信息<br>SELECT <em> FROM emp WHERE ename LIKE ‘%E’;<br>练习：查询出姓名中以e结尾的员工所有信息<br>SELECT </em> FROM emp WHERE ename LIKE ‘%E’;<br>练习：查询出姓名倒数第2个字符为e的员工所有信息<br>SELECT <em> FROM emp WHERE ename LIKE ‘%E’_;<br>SQL中提供了两个模糊查询字符<br>% 可以匹配任意多个字符  &gt;=0<br>-可以匹配任意一个字符  =1<br>注意：以上两个匹配不能个=使用，比赛、必须使用LIKE关键字<br>（9）分页查询<br>假如查询的结果集中有太多的数据，一个显示不完，可以分页显示<br>需要有两个条件：当前的页码，每页的数据量<br>SELECT </em> FROM emp LIMT start,count;<br>start:是一个数字，从结果集中的哪1条开始读取，第一条称为0，<br>count:是一个数字，最多读取的行数<br>每一页开始的算法<br>start=(页码-1)<em>count<br>假如每一页显示5天记录<br>第一页：SELECT </em> FROM emp LIMIT 0,5;<br>第二页：SELECT <em> FROM emp LIMIT 5,5;<br>第三页：SELECT </em> FROM emp LIMIT 10,5;<br>第四页：SELECT <em> FROM emp LIMIT 15,5;<br>假设每一页显示6条记录<br>第一页：SELECT </em> FROM emp LIMIT 0,6;<br>第二页：SELECT <em> FROM emp LIMIT 6,6;<br>课后任务：（1）复习内容，删除代码，保留注释重新编写代码<br>（2）练习：查询出工资为8000以上的女员工的姓名，性别，生日，<br>结果集按照工资降序排序。取前3个人。<br>（3）查看学子商城 表结构图<br>1.复杂查询  ——据华润查询 /分组查询<br>列  ：查询出所有员工的数量<br>SELECT COUNT(eid） FROM emp；#15<br>练习：使用员工的姓名获取员工数量<br>SELECT COUNT(ename)FROM emp;<br>练习：使用员工的姓名获取员工数量<br>SELECT COUNT(ename)FROM emp;#14<br>SELECT COUNT(</em>)FROM emp;#15<br>聚合函数<br>COUNT()/SUM()/AVG()/MAX()/MIN()<br>练习：查询出所有员工工资的总和<br>SENCL SUM(salary)FROM emp;<br>练习：查询出所有男员工的平均工资<br>SELECT SUM (salary)/COUNT(<em>)FROM emp<br>SELECT AVG (salary)FROM emp WHERE se<br>练习：查询出工资最高的员工的工资<br>SELECT MAX(salary)FROM emp;<br>练习：查询出工资最低的员工的工资<br>SELECT MIN (salary)FROM emp;<br>练习：查询出年龄最大的员工的生日<br>SELECT MAX(birthday)FROM emp;<br>分组查询 只能查询分组条件和聚合函数<br>试：查询出每个部门员工的最高工资<br>SELECT deptid, MAX(salary)FROM emp;GR<br>练习： 查询出男女员工的平均工资，最高工资<br>SELECT sex,AVG(salary),MAX(salary),MIN FROM emp;<br>year() 获取日期中的年份<br>试；查询1991年出生的员工<br>SELECT </em> FROM emp WHERE YEAR(birthday)=’1991’;<br>练习：查询3月份出生的员工<br>SELECT <em> FROM emp WHERE MONTH(birthday)=’3’;<br>2.复杂查询——子查询<br>本质是一个SQL语句的查询结果作为别一个SQL语句查询条件<br>试：查询出研发部员工的所有信息<br>步序1：查询研发部的部门编号<br>SELECT did FROM dept  WHERE dname=’研发部’；#10<br>步  2.使用研发部员工<br>SELECT </em> FROM empWHERE deptld=10;<br>综合：SELECT * FROM emp WHERE deptld=(<br>   SELECT did FROM dept WHERE dname=’研发部’；<br>);<br>练习：查询出和tom同一年出生的员工所有信息<br>SELECT YEAR(birthday)FROM emp WHERE ename=’tom’<br>3.复杂查询——多表查询<br>试：查询所有员工的姓名及其所有部门名称<br>SELECT ename,dname FROM emp,dept；<br>迪卡尔积！<br>怎么避免迪卡尔积，为多表查询添加条件<br>SELECT ename,dname FROM emp,dept WHERE deptld=did;<br>上语法无法查询出没有部门的员工，页不能查询没有员工的部门——SQL<br>(1)内连接INNER JOIN ;;ON ——和之前结果一样<br>SELECT ename,dname FROM emp INNER JOIN dept ON deptld=did;<br>（2）左外连接  LEFT OUTER JOIN…ON<br>SELECT ename,dname FROM emp LEFT OUTER JOIN dept ON deptld=did;<br>查询结果是左则表中所有的记录，即使右则没有对应的记录。<br>OUTER可以省略<br>(3)右外连接RIGHT OUTER JOIN…ON<br>SELECT ename,dname FROM emp RIGHT OUTER JOIN dept ON deptid=did;<br>显示右侧表中所有的记录，OUTER加油省略<br>（4）全连接FULL JOIN<br>          显示左侧和右侧所有的记录——MyQL不支持<br>         UNION合并相同的记录<br>         UNION ALL不合并相同的记录<br>4.项目中怎么保存日期，时间<br>     2018-12-6 14:40:30  2018年12月6月<br>存储得是距离计算机元年（1970-1-1）的毫秒数  使用BIGINT的列类型<br>学习一门编程语言的基本步骤<br>（1）连接背景知识：历史，现状，特点，应用场景<br>（2）搭建开发环境：编写hello world<br>  (3)变量和常量<br>（4）数据类型<br>（5）运算符<br>（6）逻辑结构<br>（7）通用小程序<br>（8）函数和对象<br>（9）第三方库，框架<br>（10）实用的一些项目</5000></p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/01/内涵段子/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">内涵段子</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav">无</ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 火影 All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
